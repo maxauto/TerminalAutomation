@@ -10,5 +10,6 @@ namespace backend.Data
         : base(options) {}
 
         public DbSet<TagValue> TagValue { get; set; }
+        public DbSet<User> User { get; set; }
     }
 }

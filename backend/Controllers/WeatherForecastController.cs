@@ -1,15 +1,19 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Net.Http;
 using System.Threading.Tasks;
 using backend.Data;
 using backend.Models;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Logging;
+using Newtonsoft.Json.Linq;
 
 namespace backend.Controllers
 {
+    [Authorize]
     [ApiController]
     [Route("api")]
     public class WeatherForecastController : ControllerBase
@@ -23,7 +27,7 @@ namespace backend.Controllers
             _context = context;
             _logger = logger;
         }
-
+        #region  MSSQL database
         [HttpGet("getdata")]
         public async Task<IActionResult> GetData()
         {
@@ -39,6 +43,7 @@ namespace backend.Controllers
             }
 
         }
+        [AllowAnonymous]
         [HttpGet("{id}")]
 
         public async Task<IActionResult> GetDataByID(int id)
@@ -77,5 +82,7 @@ namespace backend.Controllers
                 return NotFound( new{result=ex, message="fail"});
             }
         }
+        #endregion
+
     }
 }
