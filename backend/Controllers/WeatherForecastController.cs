@@ -28,6 +28,7 @@ namespace backend.Controllers
             _logger = logger;
         }
         #region  MSSQL database
+        [AllowAnonymous]
         [HttpGet("getdata")]
         public async Task<IActionResult> GetData()
         {

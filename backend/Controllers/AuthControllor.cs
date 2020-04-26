@@ -12,9 +12,11 @@ using Microsoft.IdentityModel.Tokens;
 
 namespace backend.Controllers
 {
-    [Route("api")]
+    
     [ApiController]
-    public class AuthControllor: ControllerBase
+
+    [Route("api/auth")]
+     public class AuthControllor: ControllerBase
     {
         private readonly IAuthRepository _repo;
         private readonly IConfiguration _config;
