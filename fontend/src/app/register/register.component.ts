@@ -8,7 +8,7 @@ import { error } from '@angular/compiler/src/util';
   styleUrls: ['./register.component.css']
 })
 export class RegisterComponent implements OnInit {
-  model: any = {};
+  model: any = {}; 
   @Output() cancelRegister = new EventEmitter();
   constructor(private authService: AuthService) { }
 
