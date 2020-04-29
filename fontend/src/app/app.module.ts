@@ -11,6 +11,11 @@ import { ErrorInterceptorProvider } from './_services/error.interceptor';
 import { HeaderComponent } from './layout/header/header.component';
 import { MenuComponent } from './layout/menu/menu.component';
 import { FooterComponent } from './layout/footer/footer.component';
+import { Dashboard1Component } from './content/dashboard1/dashboard1.component';
+import { Dashboard2Component } from './content/dashboard2/dashboard2.component';
+import { ProfileComponent } from './content/profile/profile.component';
+import { RouterModule } from '@angular/router';
+import { appRoutes } from './routes';
 
 
 @NgModule({
@@ -21,12 +26,16 @@ import { FooterComponent } from './layout/footer/footer.component';
       RegisterComponent,
       HeaderComponent,
       MenuComponent,
-      FooterComponent
+      FooterComponent,
+      Dashboard1Component,
+      Dashboard2Component,
+      ProfileComponent
    ],
    imports: [
       BrowserModule,
       HttpClientModule,
-      FormsModule
+      FormsModule,
+      RouterModule.forRoot(appRoutes)
    ],
    providers: [
       AuthService,
