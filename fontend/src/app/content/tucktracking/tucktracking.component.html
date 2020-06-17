@@ -1,0 +1,234 @@
+<div class="content-wrapper" style="min-height: 521 px;">
+    <div class="content-header">
+        <div class="container-fluid">
+          <div class="row mb-2">
+            <div class="col-sm-6">
+              <h1 class="m-0 text-dark">Truck Tracking</h1>
+            </div><!-- /.col -->
+            <div class="col-sm-6">
+              <ol class="breadcrumb float-sm-right">
+                
+              </ol>
+            </div><!-- /.col -->
+          </div><!-- /.row -->
+        </div><!-- /.container-fluid -->
+  </div>
+  <div class="container-fluid">
+    <div class="row">
+    <div class="col-md-12">
+        <div class="card card-outline card-primary">
+          <div class="card-header">
+            <h3 class="card-title">Search for Truck</h3>
+
+            <div class="card-tools">
+              <button type="button" class="btn btn-tool" data-card-widget="collapse"><i class="fas fa-minus"></i>
+              </button>
+            </div>
+            <!-- /.card-tools -->
+          </div>
+          <!-- /.card-header -->
+          <div class="card-body">
+            <div class="row">
+              <div class="col-sm-6">
+                <!-- select -->
+                <div class="form-group">
+                  <label>Select by</label>
+                  <select #select class="form-control" (change)="selectsearch($event)">
+                    <option value="Truck ID">Truck ID</option>
+                    <option value="PO Number">PO Number</option>
+                    <option value="Date In">Date In</option>
+                    <option value="Date Out">Date Out</option>
+                  </select>
+                </div>
+              </div>
+              <div class="col-sm-6">
+                <!-- text input -->
+                <div class="form-group">
+                  <label>{{SearchBy}}</label>
+                  <div *ngIf="Datetype">
+                    <div class="input-group input-group">
+                      <input #datadata type="date" class="form-control" min="2018-01-01" max="2018-12-31" value="2018-03-01">
+                      <span class="input-group-append">
+                        <button type="button" (click)="Searchdata(datadata.value)" class="btn btn-info">Search now</button>
+                      </span>
+                    </div>
+                  </div>
+                  <div *ngIf="!Datetype">
+                    <div class="input-group input-group">
+                      <input #numberdata type="text" class="form-control" placeholder="">
+                      <span class="input-group-append">
+                        <button type="button" (click)="Searchdata(numberdata.value)" class="btn btn-info">Search now</button>
+                      </span>
+                    </div> 
+                  </div>
+                </div>
+              </div> 
+              
+              
+            </div>
+          </div>
+          <!-- /.card-body -->
+        </div>
+        <!-- /.card -->
+      </div>
+    </div>
+    <div *ngFor="let item of SO; let i=index">
+      <div class="row"> 
+        <div class="col-12">
+          <div class="card">
+            <div class="card-header">
+              
+              <h4>{{i+1}}) {{SO[i].truckId}} (PO NO. {{SO[i].poNo}})</h4>
+              
+            </div>
+            <!-- /.card-header -->
+            <div class="card-body table-responsive p-0">
+              <table class="table table-hover text-nowrap">
+                <thead>
+                  <tr>
+                    <th class="text-info">STATION NAME</th>
+                    <th class="text-info">DATE IN</th>
+                    <th class="text-info">TIME IN</th>
+                    <th class="text-info">DATE OUT</th>
+                    <th class="text-info">TIME OUT</th>
+                    <th class="text-info">SERVICE TIME</th>
+                    <th class="text-info">PATROL TYPE</th>
+                    <th class="text-info">Q'TY (Liter)</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td>Sale Office</td>
+                    <td>
+                      {{SO[i].dateIn.slice(0,10)}}
+                    </td>
+                    <td>
+                      {{SO[i].timeIn}}
+                    </td>
+                    <td>
+                     {{SO[i].dateOut.slice(0,10)}}
+                    </td>
+                    <td>
+                      {{SO[i].timeOut}}
+                    </td>
+                    <td>
+                      {{(SO[i].serviceTime)}} minutes
+                    </td>
+                    <td>
+                     
+                    </td>
+                    <td>
+                      
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>Inbound Weighbridge</td>
+                    <td>
+                      {{IW[i].dateIn.slice(0,10)}}
+                    </td>
+                    <td>
+                      {{IW[i].timeIn}}
+                    </td>
+                    <td>
+                     {{IW[i].dateOut.slice(0,10)}}
+                    </td>
+                    <td>
+                      {{IW[i].timeOut}}
+                    </td>
+                    <td>
+                      {{(IW[i].serviceTime)}} minutes
+                    </td>
+                    <td>
+                     
+                    </td>
+                    <td>
+                      
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>Bay Loading</td>
+                    <td>
+                      {{Bay[i].dateIn.slice(0,10)}}
+                    </td>
+                    <td>
+                      {{Bay[i].timeIn}}
+                    </td>
+                    <td>
+                     {{Bay[i].dateOut.slice(0,10)}}
+                    </td>
+                    <td>
+                      {{Bay[i].timeOut}}
+                    </td>
+                    <td>
+                      {{Bay[i].serviceTime.toFixed(2)}} minutes
+                    </td>
+                    <td>
+                      {{Bay[i].gasType}}
+                    </td>
+                    <td>
+                      {{Bay[i].quantity.toLocaleString()}}
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>Outbound Weighbridge</td>
+                    <td>
+                      {{OW[i].dateIn.slice(0,10)}}
+                    </td>
+                    <td>
+                      {{OW[i].timeIn}}
+                    </td>
+                    <td>
+                     {{OW[i].dateOut.slice(0,10)}}
+                    </td>
+                    <td>
+                      {{OW[i].timeOut}}
+                    </td>
+                    <td>
+                      {{(OW[i].serviceTime)}} minutes
+                    </td>
+                    <td>
+                     
+                    </td>
+                    <td>
+                      
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>Exist Gate</td>
+                    <td>
+                      {{EG[i].dateIn.slice(0,10)}}
+                    </td>
+                    <td>
+                      {{EG[i].timeIn}}
+                    </td>
+                    <td>
+                     
+                    </td>
+                    <td>
+                      
+                    </td>
+                    <td>
+                      
+                    </td>
+                    <td>
+                     
+                    </td>
+                    <td>
+                      
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <!-- /.card-body -->
+          </div>
+          <!-- /.card -->
+        </div>
+</div>
+      
+    </div>
+    
+   
+  </div>
+</div>
+

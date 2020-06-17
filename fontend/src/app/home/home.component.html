@@ -1,9 +1,8 @@
-<app-nav></app-nav>
-<div class="container mt-5">
-  
+<!-- 
+
   <div *ngIf="!registerMode" style="text-align: center;">
-    <h1>Find your match</h1>
-    <p class="lead">Come on in to view your matchs... All you need to do is sign up!</p>
+    <h1>Welcome To TAS System</h1>
+    <p class="lead"></p>
     <div class="text-center">
       <button class="btn btn-primary btn-lg mr-2" (click)="registerToggle()">Register</button>
       <button class="btn btn-info btn-lg">Learn more</button>
@@ -13,11 +12,350 @@
   <div *ngIf="registerMode" class="container">
     <div class="row justify-content-center">
       <div class="col-4">
-          <app-register (cancelRegister)="cancelRegisterMode($event)"></app-register>
+          <app-register (cancelRegister)="cancelRegisterMode($event)" (successRegister)="successRegisterMode($event)"></app-register>
       </div> 
     </div>
 
-  </div>
+  </div> -->
+<div class="loginpage" >
+  <nav class="navbar navbar-expand-sm bg-dark navbar-dark fixed-top">
+    <div class="container">
+     <a href="#" class="navbar-brand">TAS System Group 2</a>
+     <button class="navbar-toggler" data-toggle="collapse" data-target="#navbarCollapse">
+       <span class="navbar-toggler-icon"></span>
+     </button>
+     <div class="collapse navbar-collapse" id="navbarCollapse">
+       <ul class="navbar-nav ml-auto">
+         <li class="nav-item">
+          <a href="#home-section" class="nav-link">Sign in</a>
+         </li>
+        <li class="nav-item">
+          <a href="#explore-head-section" class="nav-link">Explore</a>
+        </li>
+        <li class="nav-item">
+          <a href="#sim-head-section" class="nav-link">Simulation</a>
+        </li>
+        <li class="nav-item">
+          <a href="#about-head-section" class="nav-link">About us</a>
+        </li>
+  
+       </ul>
+     </div>
+    </div>
+  </nav>
+  
+  <header id="home-section">
+    <div class="dark-overlay">
+      <div class="home-inner container">
+        <div class="row">
+          <div class="col-lg-8 d-none d-lg-block">
+            <h1 class="display-4 pb-3"><strong>Welcome to TAS system</strong></h1>
+            <iframe width="580" height="345" src="https://www.youtube.com/embed/Xhh3_-JRnDc?autoplay=1" frameborder="0" allowfullscreen>
+            </iframe>
+          </div>
+          <div class="col-lg-4">
+            <app-nav></app-nav>
+          </div>
 
+
+        </div>
+      </div>
+    </div>
+  </header>
+  
+  <section id="explore-head-section">
+    <div class="container">
+      <div class="row">
+        <div class="col text-center py-5">
+          <h1 class="display-4">Explore</h1>
+          <p>mawmdkmawkmdlkamwkdmalwmkdmakwmdlkmkawmdklamwkld</p>
+          <a href="#" class="btn btn-outline-secondary">Find Out More</a>
+        </div>
+      </div>
+    </div>
+  </section>
+  <section id="explore-section" class="bg-light text-muted py-5">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-6">
+          <iframe width="500" height="345" src="https://www.youtube.com/embed/Xhh3_-JRnDc?autoplay=1" frameborder="0" allowfullscreen>
+          </iframe>
+        </div>
+        <div class="col-md-6">
+          <h3>Explore</h3>
+          <p>wfnwiefniwnefnwienfoinwienfiownefiewnfiwenifnweoifn</p>
+          <div class="d-flex">
+            <div class="p-4 align-self-start">
+              <i class="fas fa-check fa-2x"></i>
+            </div>
+            <div class="p-4 align-self-end">
+              wdewmfomweofpwemfwepmfowepmocpwemocpwek
+            </div>
+          </div>
+          <div class="d-flex">
+            <div class="p-4 align-self-start">
+              <i class="fas fa-check fa-2x"></i>
+            </div>
+            <div class="p-4 align-self-end">
+              wdewmfomweofpwemfwepmfowepmocpwemocpwek
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <section id="sim-head-section" class="bg-danger">
+    <div class="container">
+      <div class="row">
+        <div class="col text-center py-5">
+          <h1 class="display-4">Arena</h1>
+          <p>mawmdkmawkmdlkamwkdmalwmkdmakwmdlkmkawmdklamwkld</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="sim-section" class="py-5">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-6 order-2">
+          <iframe width="500" height="345" src="https://www.youtube.com/embed/Xhh3_-JRnDc?autoplay=1" frameborder="0" allowfullscreen>
+          </iframe>
+        </div>
+        <div class="col-md-6 order-1">
+          <h3>Explore</h3>
+          <p>wfnwiefniwnefnwienfoinwienfiownefiewnfiwenifnweoifn</p>
+          <div class="d-flex">
+            <div class="p-4 align-self-start">
+              <i class="fas fa-check fa-2x"></i>
+            </div>
+            <div class="p-4 align-self-end">
+              wdewmfomweofpwemfwepmfowepmocpwemocpwek
+            </div>
+          </div>
+          <div class="d-flex">
+            <div class="p-4 align-self-start">
+              <i class="fas fa-check fa-2x"></i>
+            </div>
+            <div class="p-4 align-self-end">
+              wdewmfomweofpwemfwepmfowepmocpwemocpwek
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <section id="about-head-section" class="my-5 text-center bg-light py-5">
+    <div class="container">
+      <div class="row">
+        <div class="col offset-md-1">
+          <div class="info-header mb-5">
+            <h1 class="text-info pb-3">
+              Team Organization
+            </h1>
+            <p class="lead">
+              qnwdinqiwdnoqwndiqnwdonqwodninqwodn
+            </p>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-lg-3 col-md-6 offset-md-2">
+          <div class="card">
+            <div class="card-body">
+            <img src="../../assets/adminlte/dist/img/Max.png" alt="" class="img-fluid rounded-circle w-50 mb-3">
+            <h4>Nares</h4>
+            <h4>Ch.</h4>
+            <h5 class="text-muted">Project Manager</h5>
+            <p>wdlqwldmqlmwdkqmwdkmqwkmdlkqmwdmlqkwmdkmqlwmdklmqkwmdkqlwmdklqmwlkdm</p>
+            <div class="d-flex justify-content-center">
+              <div class="p-4 ">
+                <a href="https://www.facebook.com/LegendmaxSK" target="_blank">
+                <i class="fab fa-facebook fa-2x "></i>
+                </a>
+              </div>
+              <div class="p-4">  
+                <a href="https://th.linkedin.com/">
+                <i class="fab fa-linkedin fa-2x "></i>
+                </a>
+              </div>
+              <div class="p-4">
+                <a href="https://www.instagram.com/?hl=th">
+                  <i class="fab fa-instagram fa-2x "></i>
+                </a>
+              </div>
+            </div>
+          </div>
+          </div>
+        </div>
+        <div class="col-lg-3 col-md-6">
+          <div class="card">
+            <div class="card-body">
+            <img src="../../assets/adminlte/dist/img/Top.png" alt="" class="img-fluid rounded-circle w-50 mb-3">
+            <h4>Theerapol</h4>
+            <h4>Th.</h4>
+            <h5 class="text-muted">Financial Analysis</h5>
+            <p>wdlqwldmqlmwdkqmwdkmqwkmdlkqmwdmlqkwmdkmqlwmdklmqkwmdkqlwmdklqmwlkdm</p>
+            <div class="d-flex justify-content-center">
+              <div class="p-4 ">
+                <a href="https://www.facebook.com/LegendmaxSK" target="_blank">
+                <i class="fab fa-facebook fa-2x "></i>
+                </a>
+              </div>
+              <div class="p-4">  
+                <a href="https://th.linkedin.com/">
+                <i class="fab fa-linkedin fa-2x "></i>
+                </a>
+              </div>
+              <div class="p-4">
+                <a href="https://www.instagram.com/?hl=th">
+                  <i class="fab fa-instagram fa-2x "></i>
+                </a>
+              </div>
+            </div>
+          </div>
+          </div>
+        </div>
+        <div class="col-lg-3 col-md-6">
+          <div class="card">
+            <div class="card-body">
+            <img src="../../assets/adminlte/dist/img/Jean.png" alt="" class="img-fluid rounded-circle w-50 mb-3">
+            <h4>Rujikorn</h4>
+            <h4>K.</h4>
+            <h5 class="text-muted">Data Engineer</h5>
+            <p>wdlqwldmqlmwdkqmwdkmqwkmdlkqmwdmlqkwmdkmqlwmdklmqkwmdkqlwmdklqmwlkdm</p>
+            <div class="d-flex justify-content-center">
+              <div class="p-4 ">
+                <a href="https://www.facebook.com/LegendmaxSK" target="_blank">
+                <i class="fab fa-facebook fa-2x "></i>
+                </a>
+              </div>
+              <div class="p-4">  
+                <a href="https://th.linkedin.com/">
+                <i class="fab fa-linkedin fa-2x "></i>
+                </a>
+              </div>
+              <div class="p-4">
+                <a href="https://www.instagram.com/?hl=th">
+                  <i class="fab fa-instagram fa-2x "></i>
+                </a>
+              </div>
+            </div>
+          </div>
+          </div>
+        </div>
+        
+        
+      </div>
+      <div class="row pt-5">
+        <div class="col-lg-3 col-md-6 offset-md-2">
+          <div class="card">
+            <div class="card-body">
+            <img src="../../assets/adminlte/dist/img/Kwan.png" alt="" class="img-fluid rounded-circle w-50 mb-3">
+            <h4>Thanaphorn</h4>
+            <h4>P.</h4>
+            <h5 class="text-muted">Data Engineer</h5>
+            <p>wdlqwldmqlmwdkqmwdkmqwkmdlkqmwdmlqkwmdkmqlwmdklmqkwmdkqlwmdklqmwlkdm</p>
+            <div class="d-flex justify-content-center">
+              <div class="p-4 ">
+                <a href="https://www.facebook.com/LegendmaxSK" target="_blank">
+                <i class="fab fa-facebook fa-2x "></i>
+                </a>
+              </div>
+              <div class="p-4">  
+                <a href="https://th.linkedin.com/">
+                <i class="fab fa-linkedin fa-2x "></i>
+                </a>
+              </div>
+              <div class="p-4">
+                <a href="https://www.instagram.com/?hl=th">
+                  <i class="fab fa-instagram fa-2x "></i>
+                </a>
+              </div>
+            </div>
+          </div>
+          </div>
+        </div>
+        <div class="col-lg-3 col-md-6">
+          <div class="card">
+            <div class="card-body">
+            <img src="../../assets/adminlte/dist/img/Run.png" alt="" class="img-fluid rounded-circle w-50 mb-3">
+            <h4>Run </h4>
+            <h4>Rattanampornsopon</h4>
+            <h5 class="text-muted">Front-End Software Developer</h5>
+            <p>wdlqwldmqlmwdkqmwdkmqwkmdlkqmwdmlqkwmdkmqlwmdklmqkwmdkqlwmdklqmwlkdm</p>
+            <div class="d-flex justify-content-center">
+              <div class="p-4 ">
+                <a href="https://www.facebook.com/LegendmaxSK" target="_blank">
+                <i class="fab fa-facebook fa-2x "></i>
+                </a>
+              </div>
+              <div class="p-4">  
+                <a href="https://th.linkedin.com/">
+                <i class="fab fa-linkedin fa-2x "></i>
+                </a>
+              </div>
+              <div class="p-4">
+                <a href="https://www.instagram.com/?hl=th">
+                  <i class="fab fa-instagram fa-2x "></i>
+                </a>
+              </div>
+            </div>
+          </div>
+          </div>
+        </div>
+        <div class="col-lg-3 col-md-7">
+          <div class="card">
+            <div class="card-body">
+            <img src="../../assets/adminlte/dist/img/Rusdee.png" alt="" class="img-fluid rounded-circle w-50 mb-3">
+            <h4>Rusdee</h4>
+            <h4>Tippayanont</h4>
+            <h5 class="text-muted">Back-End Software Developer</h5>
+            <p>wdlqwldmqlmwdkqmwdkmqwkmdlkqmwdmlqkwmdkmqlwmdklmqkwmdkqlwmdklqmwlkdm</p>
+            <div class="d-flex justify-content-center">
+              <div class="p-4 ">
+                <a href="https://www.facebook.com/LegendmaxSK" target="_blank">
+                <i class="fab fa-facebook fa-2x "></i>
+                </a>
+              </div>
+              <div class="p-4">  
+                <a href="https://th.linkedin.com/">
+                <i class="fab fa-linkedin fa-2x "></i>
+                </a>
+              </div>
+              <div class="p-4">
+                <a href="https://www.instagram.com/?hl=th">
+                  <i class="fab fa-instagram fa-2x "></i>
+                </a>
+              </div>
+            </div>
+          </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <footer id="main-footer">
+    <div class="container">
+      <div class="row">
+        <div class="col text-center pb-4">
+          <h3>TAS System Group2</h3>
+          <button class="btn btn-primary" data-toggle="model" data-target="#contactModal"> Contact Us</button>
+        </div>
+      </div>
+    </div>
+  </footer>
 </div>
+
+<script>
+
+</script>
+
+
+
+  
+
+   
+
+
 

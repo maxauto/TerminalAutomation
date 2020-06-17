@@ -1,0 +1,129 @@
+<div class="content-wrapper" style="min-height: 521 px;">
+    <div class="content-header">
+        <div class="container-fluid">
+          <div class="row mb-2">
+            <div class="col-sm-6">
+              <h1 class="m-0 text-dark">Reconciliation Sheet</h1>
+            </div><!-- /.col -->
+            <div class="col-sm-6">
+              <ol class="breadcrumb float-sm-right">
+                
+              </ol>
+            </div><!-- /.col -->
+          </div><!-- /.row -->
+        </div><!-- /.container-fluid -->
+  </div>
+  <div class="container-fluid">
+    <div class="row">
+    <div class="col-md-12">
+        <div class="card card-outline card-danger">
+          <div class="card-header">
+            <h3 class="card-title">Search for Reconciliation Sheet</h3>
+            <div class="card-tools">
+              <button type="button" class="btn btn-tool" data-card-widget="collapse"><i class="fas fa-minus"></i>
+              </button>
+            </div>
+          
+            <!-- /.card-tools -->
+          </div>
+          <!-- /.card-header -->
+          <div class="card-body">
+            <div class="row">
+            <div class="col-sm-12">
+              <!-- text input -->
+              <div class="form-group">
+                <label>Select Month</label>
+                <div class="input-group input-group-lg">
+                  <div class="input-group-prepend">
+                    <span class="input-group-text"><i class="far fa-calendar-alt"></i></span>
+                  </div>
+                  <input type="month" #monthre  value="2018-03" class="form-control">
+                  <span class="input-group-append">
+                    <button type="button" (click)="searchre(monthre.value)"  class="btn btn-danger btn-flat">Search</button>
+                  </span>
+                </div>
+              </div>
+            </div>
+            </div>
+           
+          </div>
+          <!-- /.card-body -->
+        </div>
+        <!-- /.card -->
+      </div>
+      </div>
+      <div *ngIf="trick">
+      <div class="row">
+        <div class="col-12">
+          <div class="card">
+            
+            
+            <br>
+            <h2 class=" text-center"><i>Reconciliation Sheet (Monthly)</i></h2>
+            <h4 class=" text-center">Month: March 2018</h4>
+            <br>
+            <div class="card-body table-responsive p-2">
+              
+              <table class="table table-hover text-nowrap">
+                
+                <thead>
+                  <tr>
+                    <th class="text-info">DATE</th>
+                    <th class="text-info">PO NUMBER</th> 
+                    <th class="text-info">PAYMENT NO</th>
+                    <th class="text-info">INVOICE NO</th>
+                    <th class="text-info">PRTROL TPYE</th>
+                    <th class="text-info">Q'TY (Liter)</th>
+                    <th class="text-info">AMOUNT (฿)</th>
+                    <th class="text-info">AGENT</th>
+                  </tr>
+                </thead>
+               
+                <tbody>
+                  
+                  
+                    <tr *ngFor="let item of ReconciliationData; let i=index">
+                      <td>
+                        {{ReconciliationData[i].date.slice(0,10)}}
+                      </td>
+                      <td>
+                        {{ReconciliationData[i].poNo}}
+                      </td>
+                      <td>
+                        {{ReconciliationData[i].paymentNo}}
+                      </td>
+                      <td>
+                        {{ReconciliationData[i].invoiceNo}}
+                      </td>
+                      <td>
+                        {{ReconciliationData[i].gasType}}
+                      </td>
+                      <td>
+                        {{ReconciliationData[i].quantity.toLocaleString()}}
+                      </td>
+                      <td>
+                        {{ReconciliationData[i].amount.toLocaleString()}}
+                      </td>
+                      <td>
+                        {{ReconciliationData[i].name}}
+                      </td>
+                    </tr>
+                  
+
+                </tbody>
+                
+              
+              </table>
+             
+            </div>
+            
+            <!-- /.card-body -->
+          </div>
+          <!-- /.card -->
+        </div>
+      </div>
+      </div>
+  </div>
+</div>
+
+

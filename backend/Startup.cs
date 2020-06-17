@@ -36,6 +36,11 @@ namespace backend
         {
             services.AddDbContext<DataContext>(options =>  options.UseSqlServer(Configuration.GetConnectionString("DefaultConnection")));
             services.AddControllers();
+            services.AddControllers().AddNewtonsoftJson(options =>
+            options.SerializerSettings.ReferenceLoopHandling = Newtonsoft.Json.ReferenceLoopHandling.Ignore
+            );
+
+
             
             services.AddCors();
             services.AddScoped<IAuthRepository, AuthRepository>();

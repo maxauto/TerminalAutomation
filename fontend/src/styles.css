@@ -3,3 +3,11 @@
 
 @import '../node_modules/alertifyjs//build//css//alertify.min.css';
 @import '../node_modules/alertifyjs/build/css/themes/bootstrap.min.css';
+
+/* Add application styles & imports to this file! */
+/* TOASTR BUGFIX */
+
+body{
+    background-color: #333;
+    
+}

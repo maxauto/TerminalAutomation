@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { AuthService } from '../_services/auth.service';
 import { AlertifyService } from '../_services/alertify.service';
 import { Router } from '@angular/router';
+import { ToastrService } from 'ngx-toastr';
 
 @Component({
   selector: 'app-nav',
@@ -12,17 +13,17 @@ export class NavComponent implements OnInit {
 
   model: any = {};
 
-  constructor(public authService: AuthService, public alertify: AlertifyService, private router: Router) { }
+  constructor(public authService: AuthService, public alertify: AlertifyService, private router: Router, private toastr: ToastrService) { }
 
   ngOnInit() {
   }
 
   login(){
     this.authService.login(this.model).subscribe(next => {
-      this.alertify.success('logged in successfully');
+      this.toastr.success('logged in successfully','success!');
       this.router.navigate(['/dashboard1']);
     }, error => {
-      this.alertify.error(error);
+      this.toastr.error(error,'Error!');
     });
   }
 

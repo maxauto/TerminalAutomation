@@ -1,1 +1,234 @@
-<p>dashboard2 works!</p>
+
+<div class="content-wrapper" style="min-height: 521 px;">
+    <div class="content-header">
+          <div class="container-fluid">
+            <div class="row mb-2">
+              <div class="col-sm-6">
+                <h1 class="m-0 text-dark">Performance Dashboard</h1>
+              </div><!-- /.col -->
+              <div class="col-sm-6">
+                <ol class="breadcrumb float-sm-right">
+                  
+                  <div class="input-group input-group-lg">
+                    <div class="input-group-prepend">
+                      <span class="input-group-text"><i class="far fa-calendar-alt"></i></span>
+                    </div>
+                    <input type="month" #date  value="2018-03" class="form-control">
+                    <span class="input-group-append">
+                      <button type="button" (click)="onKey(date.value)" class="btn btn-info btn-flat">Search</button>
+                    </span>
+                  </div>
+                </ol>
+              </div><!-- /.col -->
+            </div><!-- /.row -->
+          </div><!-- /.container-fluid -->
+    </div>
+    <div class="container-fluid">
+        <!-- Small boxes (Stat box) -->
+        <div class="row">
+          <div class="col-lg-3 col-6">
+            <!-- small box -->
+            <div class="small-box bg-info">
+              <div class="inner">
+                <p>Amount Filled (DIESEL)</p>
+                <h3>{{DIESEL_FillVol_Val}} ML</h3>
+    
+                
+              </div>
+              <div class="icon">
+                <i class="fas fa-gas-pump"></i>
+              </div>
+              <a href="/dashboard1" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
+            </div>
+          </div>
+          <!-- ./col -->
+          <div class="col-lg-3 col-6">
+            <!-- small box -->
+            <div class="small-box bg-success">
+              <div class="inner">
+                <p>Amount Filled (GASOHOL 95)</p>
+                <h3>{{GASOHOL95_FillVol_Val}} ML</h3>
+    
+                
+              </div>
+              <div class="icon">
+                <i class="fas fa-gas-pump"></i>
+              </div>
+              <a href="/dashboard1" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
+            </div>
+          </div>
+          <!-- ./col -->
+          <div class="col-lg-3 col-6">
+            <!-- small box -->
+            <div class="small-box bg-warning">
+              <div class="inner">
+                <p>Average DIESEL Cycle Time</p>
+                <h3>{{DIESEL_Cycle_Val}} min</h3>
+    
+                
+              </div>
+              <div class="icon">
+                <i class="fas fa-history"></i>
+              </div>
+              <a href="/dashboard1" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
+            </div>
+          </div>
+          <!-- ./col -->
+          <div class="col-lg-3 col-6">
+            <!-- small box -->
+            <div class="small-box bg-danger">
+              <div class="inner">
+                <p>Average GASOHOL95 Cycle Time</p>
+                <h3>{{GASOHOL95_Cycle_Val}} min</h3>
+    
+               
+              </div>
+              <div class="icon">
+                <i class="fas fa-history"></i>
+              </div>
+              <a href="/dashboard1" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
+            </div>
+          </div>
+          <!-- ./col -->
+        </div>
+        <!-- /.row -->
+        <!-- Main row -->
+        <div class="row" >
+          <!-- Left col -->
+          <section class="col-lg-6 connectedSortable ui-sortable">
+            <!-- Custom tabs (Charts with tabs)-->
+            
+            <div class="card">
+              <div class="card-header ui-sortable-handle" style="cursor: move;">
+                <h3 class="card-title">
+                  <i class="fas fa-chart-bar"></i>
+                  Average Waiting Time
+                </h3>
+                <div class="card-tools">
+                
+                </div>
+              </div><!-- /.card-header -->
+              <div class="card-body">
+                <div class="tab-content p-0">
+                  
+                  <app-bar-chart3></app-bar-chart3>
+                </div>
+              </div><!-- /.card-body -->
+            </div>
+            <!-- /.card -->
+    
+            
+            <!-- /.card -->
+          </section>
+          <section class="col-lg-6 connectedSortable ui-sortable">
+            <!-- Custom tabs (Charts with tabs)-->
+            <div class="card">
+              <div class="card-header ui-sortable-handle" style="cursor: move;">
+                <h3 class="card-title">
+                  <i class="fas fa-chart-bar"></i>
+                  Average Number of Queue
+                </h3>
+                <div class="card-tools">
+                
+                </div>
+              </div><!-- /.card-header -->
+              <div class="card-body">
+                <div class="tab-content p-0">
+                  <app-bar-chart4  ></app-bar-chart4>
+                  
+                </div>
+              </div><!-- /.card-body -->
+            </div>
+            <!-- /.card -->
+            <div class="card">
+              <div class="card-header ui-sortable-handle" style="cursor: move;">
+                <h3 class="card-title">
+                  <i class="fas fa-chart-bar"></i>
+                  Schedule Utilization
+                </h3>
+                <div class="card-tools">
+                
+                </div>
+              </div><!-- /.card-header -->
+              <div class="card-body">
+                <div class="tab-content p-0">
+                  <app-bar-chart5 ></app-bar-chart5>
+                  
+                </div>
+              </div><!-- /.card-body -->
+            </div>
+            <!-- /.card -->
+    
+            
+            <!-- /.card -->
+          </section>
+          
+    
+          <!-- /.Left col -->
+    
+          <!-- right col -->
+        </div>
+        <!-- /.row (main row) -->
+        <div class="row">
+          <div class="col-12 col-sm-6 col-md-3">
+            <div class="info-box">
+              <span class="info-box-icon bg-info elevation-1"><i class="fas fa-people-carry"></i></span>
+    
+              <div class="info-box-content">
+                <span class="info-box-text">Average WIP (DIESEL)</span>
+                <span class="info-box-number">
+                  {{DIESEL_WIP_Val}}
+                  
+                </span>
+              </div>
+              <!-- /.info-box-content -->
+            </div>
+            <!-- /.info-box -->
+          </div>
+          <!-- /.col -->
+          <div class="col-12 col-sm-6 col-md-3">
+            <div class="info-box mb-3">
+              <span class="info-box-icon bg-success elevation-1"><i class="fas fa-people-carry"></i></span>
+    
+              <div class="info-box-content">
+                <span class="info-box-text">Average WIP (GASOHOL95)</span>
+                <span class="info-box-number">{{GASOHOL95_WIP_Val}}</span>
+              </div>
+              <!-- /.info-box-content -->
+            </div>
+            <!-- /.info-box -->
+          </div>
+          <!-- /.col -->
+    
+          <!-- fix for small devices only -->
+          <div class="clearfix hidden-md-up"></div>
+    
+          <div class="col-12 col-sm-6 col-md-3">
+            <div class="info-box mb-3">
+              <span class="info-box-icon bg-warning elevation-1"><i class="fas fa-truck-moving"></i></span>
+    
+              <div class="info-box-content">
+                <span class="info-box-text">Truck In</span>
+                <span class="info-box-number">{{Truck_In_Val}}</span>
+              </div>
+              <!-- /.info-box-content -->
+            </div>
+            <!-- /.info-box -->
+          </div>
+          <!-- /.col -->
+          <div class="col-12 col-sm-6 col-md-3">
+            <div class="info-box mb-3">
+              <span class="info-box-icon bg-danger elevation-1"><i class="fas fa-truck-moving"></i></span>
+    
+              <div class="info-box-content">
+                <span class="info-box-text">Truck Out</span>
+                <span class="info-box-number">{{Truck_Out_Val}}</span>
+              </div>
+              <!-- /.info-box-content -->
+            </div>
+            <!-- /.info-box -->
+          </div>
+          <!-- /.col -->
+        </div>
+      </div>
+    </div>

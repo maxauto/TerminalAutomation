@@ -1,0 +1,178 @@
+<div class="content-wrapper" style="min-height: 521 px;">
+    <div class="content-header">
+        <div class="container-fluid">
+          <div class="row mb-2">
+            <div class="col-sm-6">
+              <h1 class="m-0 text-dark">Invoice</h1>
+            </div><!-- /.col -->
+            <div class="col-sm-6">
+              <ol class="breadcrumb float-sm-right">
+                
+              </ol>
+            </div><!-- /.col -->
+          </div><!-- /.row -->
+        </div><!-- /.container-fluid -->
+  </div>
+  <div class="container-fluid">
+    <div class="row">
+    <div class="col-md-12">
+        <div class="card card-outline card-primary">
+          <div class="card-header">
+            <h3 class="card-title">Search for Invoice</h3>
+
+            <div class="card-tools">
+              <button type="button" class="btn btn-tool" data-card-widget="collapse"><i class="fas fa-minus"></i>
+              </button>
+            </div>
+            <!-- /.card-tools -->
+          </div>
+          <!-- /.card-header -->
+          <div class="card-body">
+            <div class="col-sm-12">
+              <!-- text input -->
+              <div class="form-group">
+                <label>Invoice Number</label>
+                <div class="input-group input-group-lg">
+                  <div class="input-group-prepend">
+                    <span class="input-group-text"><i class="fas fa-file-invoice-dollar"></i></span>
+                  </div>
+                  <input type="text" #invoice  class="form-control" placeholder="Ex.1728301101">
+                  <span class="input-group-append">
+                    <button type="button" (click)="searchinvoice(invoice.value)"  class="btn btn-primary btn-flat">Search</button>
+                  </span>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- /.card-body -->
+        </div>
+        <!-- /.card -->
+      </div>
+      </div>
+      <div *ngFor="let item of InvoiceData; let i=index">
+      <div class="row">
+        <div class="col-12">
+          <div class="card">
+            <div class="card-body">
+              
+              <div id="print-section" >
+              <h2 class=" text-center"><i>Paid Sale Invoice</i></h2><br>
+              <div class="row">
+                <div class="col-md-10 ml-3">
+                  <p style="font-size:20px" >Company Name : PTT Public Company Limited</p>
+                  <p style="font-size:20px" >Address : {{InvoiceData[i].address}}</p>
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-md-3 offset-md-9">
+                  <p style="font-size:20px" >Invoice NO. :  {{InvoiceData[i].invoiceNo}}</p>
+                  <p style="font-size:20px" >PO NO. :  {{InvoiceData[i].poNo}}</p>
+                  <p style="font-size:20px" >Payment NO. :  {{InvoiceData[i].paymentNo}}</p>
+                  <p style="font-size:20px" >Date :  {{InvoiceData[i].date.slice(0,10)}}</p>
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-md-7 ml-3">
+                  <p style="font-size:20px" >Customer ID :  {{InvoiceData[i].customerId}}</p>
+                  <p style="font-size:20px" >Customer :  {{InvoiceData[i].name}}</p>
+                  <p style="font-size:20px" >Tax Payer ID :  {{InvoiceData[i].taxPayerId}}</p>
+                </div>
+              </div>
+              <div class="card-body table-responsive p-2">
+                <table class="table table-hover text-nowrap">
+                  <thead>
+                    <tr>
+                      <th class="text-info">Date</th>
+                      <th class="text-info">Filling Time</th>
+                      <th class="text-info">Item</th>
+                      <th class="text-info">Price/Liter</th>
+                      <th class="text-info">Q'ty(Liter)</th>
+                      <th class="text-info">Amount(฿)</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td>
+                        {{InvoiceData[i].date.slice(0,10)}}
+                      </td>
+                      <td>
+                        {{InvoiceData[i].serviceTime}}
+                      </td>
+                      <td>
+                        {{InvoiceData[i].gasType}}
+                      </td>
+                      <td>
+                        {{InvoiceData[i].price}}
+                      </td>
+                      <td>
+                        {{InvoiceData[i].quantity}}
+                      </td>
+                      <td>
+                        {{(InvoiceData[i].amount).toLocaleString()}}
+                      </td>
+                    </tr>
+                    <tr>
+                      <td>
+                        
+                      </td>
+                      <td>
+                        
+                      </td>
+                      <td>
+                        
+                      </td>
+                      <td>
+                        
+                      </td>
+                      <td class="text-info">
+                        <b>Vat 7% (inclusive)</b>
+                      
+                      </td>
+                      <td>
+                        {{(InvoiceData[i].amount*(0.07)).toLocaleString()}}
+                      </td>
+                    </tr>
+                    <tr>
+                      <td>
+
+                      </td>
+                      <td>
+                        
+                      </td>
+                      <td>
+                        
+                      </td>
+                      <td>
+                        
+                      </td>
+                      <td class="text-info">
+                       <b>Grand Total</b> 
+                      </td>
+                      <td >
+                        {{(InvoiceData[i].amount*(1.07)).toLocaleString()}}
+                      </td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+              </div>
+              <div class="row no-print">
+                <div class="col-12">
+                  
+                  
+                    <button  (click)="print()" class="btn btn-primary float-right" style="margin-right: 5px;"><i class="fas fa-print"></i> Print</button>
+                  
+                </div>
+              </div>
+            </div>
+            
+            <!-- /.card-body -->
+          </div>
+          <!-- /.card -->
+        </div>
+      </div>
+      </div>
+  </div>
+</div>
+
+

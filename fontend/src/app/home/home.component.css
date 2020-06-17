@@ -1,0 +1,68 @@
+.loginpage{
+    color: #fff;
+}
+
+.navbar{
+    border-bottom: #0099ff 3px solid;
+    opacity: 0.9;
+}
+
+#home-section {
+    background: url(../../assets/adminlte/dist/img/truck.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+    min-height: 800px;
+}
+
+#home-section .dark-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    min-height: 800px;
+    background: rgba(0,0,0,0.8);
+}
+
+#home-section .home-inner{
+    padding-top: 150px;
+}
+
+#home-section .card-form {
+    opacity: 0.5;
+}
+
+#explore-section .fas{
+    background: #333;
+    color: #fff;
+    padding: 5px;
+    border-radius: 5px;
+}
+
+#sim-section .fas{
+    background: #fff;
+    color: #0099ff;
+    padding: 5px;
+    border-radius: 5px;
+}
+
+.info_header {
+    width: 50%;
+    margin: auto;
+    border-bottom: 1px #ddd solid;
+}
+
+#about-head-section .card:hover {
+    background: #17a2b8;
+    color: #fff;
+}
+
+#about-head-section .fab {
+    color: #fff;
+}
+#about-head-section img {
+   margin-top: -50px;
+}
+.pink {
+    color: rgb(168, 25, 200);
+}

@@ -1,0 +1,103 @@
+<div class="content-wrapper" style="min-height: 521 px;">
+    <div class="content-header">
+        <div class="container-fluid">
+          <div class="row mb-2">
+            <div class="col-sm-6">
+              <h1 class="m-0 text-dark">General Journal</h1>
+            </div><!-- /.col -->
+            <div class="col-sm-6">
+              <ol class="breadcrumb float-sm-right">
+                
+              </ol>
+            </div><!-- /.col -->
+          </div><!-- /.row -->
+        </div><!-- /.container-fluid -->
+  </div>
+  <div class="container-fluid">
+    <div class="row">
+    <div class="col-md-12">
+        <div class="card card-outline card-info">
+          <div class="card-header">
+            <h3 class="card-title">Search for Journal</h3>
+
+            <div class="card-tools">
+              <button type="button" class="btn btn-tool" data-card-widget="collapse"><i class="fas fa-minus"></i>
+              </button>
+            </div>
+            <!-- /.card-tools -->
+          </div>
+          <!-- /.card-header -->
+          <div class="card-body">
+            <div class="col-sm-12">
+              <!-- text input -->
+              <div class="form-group">
+                <label>Select Date</label>
+                <div class="input-group input-group-lg">
+                  <div class="input-group-prepend">
+                    <span class="input-group-text"><i class="far fa-calendar-alt"></i></span>
+                  </div>
+                  <input type="date" #datejournal  value="2018-03-01" class="form-control">
+                  <span class="input-group-append">
+                    <button type="button" (click)="Searchjournal(datejournal.value)"  class="btn btn-info btn-flat">Search</button>
+                  </span>
+                </div>
+              </div>
+            </div>
+            
+          </div>
+          
+          <!-- /.card-body -->
+        </div>
+        <!-- /.card -->
+      </div>
+      </div>
+      <div *ngIf="trick">
+      <div class="row">
+        <div class="col-12">
+          <div class="card">
+            <h4 class="text-right pt-4 pr-4">{{jRef}}</h4>
+            <h2 class=" text-center"><i>Genneral Journal</i></h2>
+            <h4 class=" text-center">Date: {{datajournal[0].date.slice(0,10)}}</h4><br>
+            <!-- /.card-header -->
+            <div class="card-body table-responsive p-2">
+              <table class="table table-hover text-nowrap">
+                <thead>
+                  <tr>
+                    <th class="text-info">DATE</th>
+                    <th class="text-info">ACCOUNT TITLES AND EXPLANATION</th>
+                    <th class="text-info">REF.</th>
+                    <th class="text-info">DEBIT</th>
+                    <th class="text-info">CREDIT</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr *ngFor="let item of debitdata; let i=index">
+                    <td>{{datajournal[2*i].date.slice(0,10)}}</td>
+                    <td>
+                      <p>{{datajournal[2*i].description}}</p>
+                      <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{{datajournal[2*i+1].description}}</p>
+                    </td>
+                    <td>
+                      <p>{{datajournal[2*i].refNo}}</p>
+                      <p>{{datajournal[2*i+1].refNo}}</p>
+                    </td>
+                    <td>
+                      <p>{{datajournal[2*i].amount.toLocaleString()}}</p>
+                    </td>
+                    <td>
+                      <p>&nbsp;</p>
+                      <p>{{datajournal[2*i+1].amount.toLocaleString()}}</p>
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <!-- /.card-body -->
+          </div>
+          <!-- /.card -->
+        </div>
+      </div>
+      </div>
+  </div>
+</div>
+
